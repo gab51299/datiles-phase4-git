@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Idtables</h1>
+
+<table class = "table table-hover">
+  <thead class = "thead-dark">
+    <tr>
+      <th>Idtype</th>
+      <th>Minbal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @idtables.each do |idtable| %>
+      <tr>
+        <td><%= idtable.idtype %></td>
+        <td><%= idtable.minbal %></td>
+        <td><%= link_to 'Show', idtable %></td>
+        <td><%= link_to 'Edit', edit_idtable_path(idtable) %></td>
+        <td><%= link_to 'Destroy', idtable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Idtable', new_idtable_path %>

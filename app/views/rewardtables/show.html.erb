@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rewardtype:</strong>
+  <%= @rewardtable.rewardtype %>
+</p>
+
+<p>
+  <strong>Pts:</strong>
+  <%= @rewardtable.pts %>
+</p>
+
+<%= link_to 'Edit', edit_rewardtable_path(@rewardtable) %> |
+<%= link_to 'Back', rewardtables_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rewardtables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rewardtype</th>
+      <th>Pts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rewardtables.each do |rewardtable| %>
+      <tr>
+        <td><%= rewardtable.rewardtype %></td>
+        <td><%= rewardtable.pts %></td>
+        <td><%= link_to 'Show', rewardtable %></td>
+        <td><%= link_to 'Edit', edit_rewardtable_path(rewardtable) %></td>
+        <td><%= link_to 'Destroy', rewardtable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rewardtable', new_rewardtable_path %>

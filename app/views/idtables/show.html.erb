@@ -1,0 +1,16 @@
+<div class="container text">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Idtype:</strong>
+    <%= @idtable.idtype %>
+  </p>
+
+  <p>
+    <strong>Minbal:</strong>
+    <%= @idtable.minbal %>
+  </p>
+
+  <%= link_to 'Edit', edit_idtable_path(@idtable) %> |
+  <%= link_to 'Back', idtables_path %>
+</div>

@@ -1,0 +1,28 @@
+<%= form_with(model: idtable, local: true) do |form| %>
+  <% if idtable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(idtable.errors.count, "error") %> prohibited this idtable from being saved:</h2>
+
+      <ul>
+        <% idtable.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :idtype %>
+    <%= form.text_field :idtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minbal %>
+    <%= form.number_field :minbal %>
+  </div>
+  
+  
+  <div type = "button" class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

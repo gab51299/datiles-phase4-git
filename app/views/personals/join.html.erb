@@ -1,0 +1,13 @@
+<tbody>
+    <% @join.each do |join| %>
+      <tr>
+        <td><%= join.email %></td>
+        <td><%= join.tel %></td>
+        <td><%= join.mobile %></td>
+        <td><%= join.idtype %></td>
+        <td><%= join.minbal %></td>
+        <td><%= join.rewardtype %></td>
+        <td><%= join.pts %></td>
+      </tr>
+    <% end %>
+  </tbody>
