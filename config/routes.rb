@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'personals'
+  root 'personals#index'
   resources :rewardtables
   resources :idtables
   resources :personals
