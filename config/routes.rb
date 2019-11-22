@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'personals'
   resources :rewardtables
   resources :idtables
   resources :personals
