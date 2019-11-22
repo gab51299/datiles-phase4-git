@@ -1,3 +1,18 @@
+
+<table class = "table table-hover">
+<thead class = "thead-dark">
+  <tr>
+    <th>Email</th>
+    <th>Tel</th>
+    <th>Mobile</th>
+    <th>Id Type</th>
+    <th>Minbal</th>
+    <th>R Type</th>
+    <th>Points</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
 <tbody>
     <% @join.each do |join| %>
       <tr>
@@ -5,9 +20,12 @@
         <td><%= join.tel %></td>
         <td><%= join.mobile %></td>
         <td><%= join.idtype %></td>
-        <td><%= join.minbal %></td>
+        <td>&#x20B1 <%= join.minbal %></td>
         <td><%= join.rewardtype %></td>
         <td><%= join.pts %></td>
       </tr>
     <% end %>
   </tbody>
+</table>
+
+<%= link_to 'Back', personals_path %>
