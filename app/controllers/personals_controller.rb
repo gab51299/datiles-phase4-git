@@ -23,8 +23,7 @@ class PersonalsController < ApplicationController
 
   # GET /personals/1/join ?
   def join
-    @join = Personal.select("personals.*,idtables.*,rewardtables.*").joins("INNER JOIN idtables ON idtables.idtype = personals.idtype
-                           INNER JOIN rewardtables ON rewardtables.rewardtype = personals.rewardtype")
+    @join = Personal.select("personals.*,idtables.*,rewardtables.*").joins("INNER JOIN idtables ON idtables.idtype = personals.idtype INNER JOIN rewardtables ON rewardtables.rewardtype = personals.rewardtype")
   end
 
   # POST /personals

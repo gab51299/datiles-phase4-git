@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+body {
+    background-color: white;
+}
+
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  } 
+
+.card {
+    width: 90vw;
+    margin: auto;
+
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn {
+    margin:5px 3px;
+    max-width: 100px;
+    color: white;
+}

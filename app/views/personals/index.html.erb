@@ -1,40 +1,38 @@
-<div>
-      Page header
-</div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
 
 <p id="notice"><%= notice %></p>
 
 <h1>Personal</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Tel</th>
-      <th>Mobile</th>
-      <th>Id Type</th>
-      <th>Reward Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+  <div class = "card-columns">
     <% @personals.each do |personal| %>
-      <tr>
-        <td><%= personal.email %></td>
-        <td><%= personal.tel %></td>
-        <td><%= personal.mobile %></td>
-        <td><%= personal.idtype %></td>
-        <td><%= personal.rewardtype %></td>
-        <td><%= link_to 'Show', personal %></td>
-        <td><%= link_to 'Edit', edit_personal_path(personal) %></td>
-        <td><%= link_to 'Destroy', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class = "card">
+        <div class = "card-header row">
+          <h4 class ="col-md-6 text-left"><%= personal.email %></h4>
+        
+          <div class = "btn-group col-md-6 text-center ">
+              <button class="btn btn-primary"><%= link_to 'Show', personal %></button>
+              <button class="btn btn-primary"><%= link_to 'Edit', edit_personal_path(personal) %></button>
+              <button class="btn btn-danger"><%= link_to 'Delete', personal, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          </div>
+        </div>
+        <h5> Telephone Number </h5>
+        <div><%= personal.tel %></div>
+        <div><%= personal.mobile %></div>
+        <div><%= personal.idtype %></div>
+        <div><%= personal.rewardtype %></div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
 <br>
 
 <%= link_to 'New Record', new_personal_path %>
 <%= link_to 'Joins', joinp_path(@join) %>
+
