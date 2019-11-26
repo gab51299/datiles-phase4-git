@@ -5,6 +5,22 @@ body {
     background-color: white;
 }
 
+.navbar {
+    background-color: red;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/app/assets/fonts/Roboto-Regular.ttf');
+    font-family: 'Roboto-Light';
+    src: url('/app/assets/fonts/Roboto-Light.ttf');
+}
+
 @viewport {
     width: device-width ;
     zoom: 1.0 ;
@@ -26,5 +42,10 @@ html {
 .btn {
     margin:5px 3px;
     max-width: 100px;
+    max-height: 50px;
+    color: white;
+}
+
+button {
     color: white;
 }

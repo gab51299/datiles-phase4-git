@@ -2,17 +2,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" style="background-color: blue">
+    <a class="navbar-brand" href="#">Personal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <div class="nav-link"><%= link_to 'New Record', new_personal_path %></div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Others
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-item"><%= link_to 'ID Types', idtables_path %></div>
+            <div class="dropdown-item"><%= link_to 'Rewards', rewardtables_path %></div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item"><%= link_to 'All Records', joinp_path(@join) %></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> 
 
 <p id="notice"><%= notice %></p>
-
-<h1>Personal</h1>
-
-
-
   <div class = "card-columns">
     <% @personals.each do |personal| %>
-      <div class = "card">
+      <div class = "card card-body border-light my-5 mx-5">
         <div class = "card-header row">
           <h4 class ="col-md-6 text-left"><%= personal.email %></h4>
         
@@ -23,16 +42,10 @@
           </div>
         </div>
         <h5> Telephone Number </h5>
-        <div><%= personal.tel %></div>
-        <div><%= personal.mobile %></div>
-        <div><%= personal.idtype %></div>
-        <div><%= personal.rewardtype %></div>
+        <div class = "card-text"><%= personal.tel %></div>
+        <div class = "card-text"><%= personal.mobile %></div>
+        <div class = "card-text"><%= personal.idtype %></div>
+        <div class = "card-text"><%= personal.rewardtype %></div>
       </div>
     <% end %>
   </div>
-
-<br>
-
-<%= link_to 'New Record', new_personal_path %>
-<%= link_to 'Joins', joinp_path(@join) %>
-

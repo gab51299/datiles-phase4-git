@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :idtype %>
-    <%= form.text_field :idtype %>
+    <%= form.select :idtype, ['Gold', 'Emerald','Platinum']%>
   </div>
 
   <div class="field">
     <%= form.label :rewardtype %>
-    <%= form.text_field :rewardtype %>
+    <%= form.select :rewardtype, ['Regular', 'Upgraded','Unlimited']%>
   </div>
 
   <div class="actions">
