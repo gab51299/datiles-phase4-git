@@ -1,9 +1,16 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" style="background-color: blue">
-    <a class="navbar-brand" href="#">Personal</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" 
+style="background-color: #0072CE !important;
+  border-radius: 0rem !important;
+  border-bottom-left-radius: 1.5rem !important;
+  border-bottom-right-radius: 1.5rem !important;
+  ">
+
+    <a class="navbar-brand" href="#" style ="color: white !important;">Personal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,17 +18,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <div class="nav-link"><%= link_to 'New Record', new_personal_path %></div>
+            <div class="nav-link" style = "background-color:#efefef; border-color:transparent; border-radius: 0.5rem;"> <%= link_to 'New Record', new_personal_path, style: "color:#1e4f8e"%></div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="color:white;">
             Others
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div class="dropdown-item"><%= link_to 'ID Types', idtables_path %></div>
-            <div class="dropdown-item"><%= link_to 'Rewards', rewardtables_path %></div>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#0072CE; ">
+            <div class="dropdown-item"><%= link_to 'ID Types', idtables_path, style: "color:white"%></div>
+            <div class="dropdown-item"><%= link_to 'Rewards', rewardtables_path, style: "color:white" %></div>
             <div class="dropdown-divider"></div>
-            <div class="dropdown-item"><%= link_to 'All Records', joinp_path(@join) %></div>
+            <div class="dropdown-item"><%= link_to 'All Records', joinp_path(@join), style: "color:white" %></div>
           </div>
         </li>
       </ul>
@@ -31,14 +38,14 @@
 <p id="notice"><%= notice %></p>
   <div class = "card-columns">
     <% @personals.each do |personal| %>
-      <div class = "card card-body border-light my-5 mx-5">
+      <div class = "card card-body border-light my-4 mx-1.5">
         <div class = "card-header row">
           <h4 class ="col-md-6 text-left"><%= personal.email %></h4>
         
           <div class = "btn-group col-md-6 text-center ">
-              <button class="btn btn-primary"><%= link_to 'Show', personal %></button>
-              <button class="btn btn-primary"><%= link_to 'Edit', edit_personal_path(personal) %></button>
-              <button class="btn btn-danger"><%= link_to 'Delete', personal, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              <button class="btn btn-primary" style = "background-color:#f7af19; border-color:transparent;"><%= link_to 'Show', personal, style: "color:white"%></button>
+              <button class="btn btn-primary" style = "background-color:#f7af19; border-color:transparent;"><%= link_to 'Edit', edit_personal_path(personal), style: "color:white" %></button>
+              <button class="btn btn-danger"><%= link_to 'Delete', personal, method: :delete, data: { confirm: 'Are you sure?' },  style: "color:white"%></button>
           </div>
         </div>
         <h5> Telephone Number </h5>
