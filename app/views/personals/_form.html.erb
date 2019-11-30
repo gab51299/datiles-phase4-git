@@ -1,42 +1,88 @@
-<%= form_with(model: personal, local: true) do |form| %>
-  <% if personal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(personal.errors.count, "error") %> prohibited this personal from being saved:</h2>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-      <ul>
-        <% personal.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" 
+style="background-color: #0072CE !important;
+  border-radius: 0rem !important;
+  border-bottom-left-radius: 1.5rem !important;
+  border-bottom-right-radius: 1.5rem !important;
+  ">
+
+    <a href="https://www.bdo.com.ph/personal"><%=image_tag("logo.svg",style: "height: 30px;")%></a>
+    <a class="navbar-brand" href="#" style ="color: white !important;">
+        New Record
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="color:white;">
+            Others
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#0072CE; ">
+            <div class="dropdown-item"><%= link_to 'ID Types', idtables_path, style: "color:white"%></div>
+            <div class="dropdown-item"><%= link_to 'Rewards', rewardtables_path, style: "color:white" %></div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item"><%= link_to 'All Records', joinp_path(@join), style: "color:white" %></div>
+          </div>
+        </li>
       </ul>
     </div>
-  <% end %>
+  </nav> 
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+<br><br>
+<form style = "padding: 25px 50px !important;">
+  <div class = "form-row">
+    <%= form_with(model: personal, local: true) do |form| %>
+      <% if personal.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(personal.errors.count, "error") %> prohibited this personal from being saved:</h2>
+  
+          <ul>
+            <% personal.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :tel %>
-    <%= form.text_field :tel %>
+      <div class="form-group col">
+        <label for="exampleInputEmail1">Email address</label>
+        <div><%= form.text_field :email, placeholder: "email@website.com" %></div>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      
+      <div class="form-group col">
+        <label for="exampleTel">Telephone Number</label>
+        <div><%= form.text_field :tel, placeholder: "XXXX-YYYY" %></div>
+      </div>
+  
+      
+      <div class="form-group col">
+        <label for="exampleCell">Mobile Number</label>
+        <div><%= form.text_field :mobile, placeholder: "+63 XXX-YYY-ZZZZ" %></div>
+      </div>
   </div>
+      <div class="form-group">
+        <label for="exampleIDtype">ID Type</label>
+        <div><%= form.select :idtype, ['Gold', 'Emerald','Platinum']%></div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label for="exampleReward">Reward Type</label>
+        <div><%= form.select :rewardtype, ['Regular', 'Upgraded','Unlimited']%></div>
+      </div>
 
-  <div class="field">
-    <%= form.label :mobile %>
-    <%= form.text_field :mobile %>
-  </div>
+      <br>
 
-  <div class="field">
-    <%= form.label :idtype %>
-    <%= form.select :idtype, ['Gold', 'Emerald','Platinum']%>
-  </div>
-
-  <div class="field">
-    <%= form.label :rewardtype %>
-    <%= form.select :rewardtype, ['Regular', 'Upgraded','Unlimited']%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      <button class="btn">
+        <%= form.submit %>
+      </button>
+    <% end %>
+</form>
