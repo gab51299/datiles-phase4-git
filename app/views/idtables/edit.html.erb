@@ -1,6 +1,46 @@
-<h1>Editing Idtable</h1>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-<%= render 'form', idtable: @idtable %>
+<body style = "margin:25px; padding:0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" 
+    style="background-color: #0072CE !important;
+    border-radius: 0rem !important;
+    border-bottom-left-radius: 1.5rem !important;
+    border-bottom-right-radius: 1.5rem !important;
+    ">
 
-<%= link_to 'Show', @idtable %> |
-<%= link_to 'Back', idtables_path %>
+    <a href="https://www.bdo.com.ph/personal"><%=image_tag("logo.svg",style: "height: 30px;")%></a>
+    <a class="navbar-brand" href="#" style ="color: white !important;">
+        Editing Record
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+              <div class="nav-link" style = "background-color:#efefef; border-color:transparent; border-radius: 0.5rem;"> <%= link_to 'Back', personals_path, style: "color:#1e4f8e"%></div>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style ="color:white;">
+            Others
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="background-color:#0072CE; ">
+            <div class="dropdown-item"><%= link_to 'ID Types', idtables_path, style: "color:white"%></div>
+            <div class="dropdown-item"><%= link_to 'Rewards', rewardtables_path, style: "color:white" %></div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item"><%= link_to 'All Records', joinp_path(@join), style: "color:white" %></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> 
+
+  <br><br>
+    <%= render 'form', idtable: @idtable %>
+
+</body>

@@ -1,9 +1,9 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="index.css">
-</head>
-
-<body style="margin:15px;padding:0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  
+<body style="margin:30px;padding:0">
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top rounded-lg" 
   style="background-color: #0072CE !important;
     border-radius: 0rem !important;
@@ -42,11 +42,11 @@
   <p id="notice"><%= notice %></p>
     <div class = "card-columns">
       <% @personals.each do |personal| %>
-        <div class = "card border-light m-auto">
+        <div class = "card border-light">
           <div class = "card-header">
-            <h4 class ="col-md-6 text-left my-auto"><%= personal.email %></h4>
-
-            <div class = "btn-group col-md-6 text-center m-auto">
+            <h4 class ="col-md-6 text-left my-auto" style="white-space:nowrap"><%= personal.email %></h4>
+          
+            <div class = "btn-group col-md-6 text-right my-auto ">
                 <button class="btn btn-primary" style = "background-color:#f7af19; border-color:transparent;"><%= link_to 'Show', personal, style: "color:white"%></button>
                 <button class="btn btn-primary" style = "background-color:#f7af19; border-color:transparent;"><%= link_to 'Edit', edit_personal_path(personal), style: "color:white" %></button>
                 <button class="btn btn-danger"><%= link_to 'Delete', personal, method: :delete, data: { confirm: 'Are you sure?' },  style: "color:white"%></button>

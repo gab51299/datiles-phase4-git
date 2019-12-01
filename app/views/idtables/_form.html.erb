@@ -10,19 +10,18 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <label for="exampleIDtype">ID Type</label>
   <div class="field">
-    <%= form.label :idtype %>
     <%= form.text_field :idtype %>
   </div>
-
+  <br>
+  <label for="exampleMBal">Minimum Balance</label>
   <div class="field">
-    <%= form.label :minbal %>
     <%= form.number_field :minbal %>
   </div>
-  
-  
-  <div type = "button" class="actions">
+  <br>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
